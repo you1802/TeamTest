@@ -23,7 +23,7 @@ public class CospaDTO {
        this.calory = calory;
    }
 
-   public CospaDTO(){};
+   public CospaDTO(){}
 
    //以下アクセッサー
 
