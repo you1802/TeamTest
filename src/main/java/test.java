@@ -12,13 +12,14 @@ public class test {
         ArrayList<CospaDTO> list = new ArrayList<>();
         for(; ; ) {
             display.listDisplay(list);
-            System.out.println("入力：1 編集：2 削除：３");
+            System.out.println("何用:? (コスパ順：0 入力：1 編集：2 削除：３)");
             switch (scanner.nextLine()) {
+                case "0": display.sort(scanner, list); break;
                 case "1": controller.listInput(scanner, list); break;
                 case "2": controller.listEdit(scanner, list); break;
+                case "3": controller.delete(scanner, list); break;
                 default:continue;
             }
-
         }
 
     }

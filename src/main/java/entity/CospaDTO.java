@@ -2,7 +2,7 @@ package entity;
 
 import java.util.Calendar;
 
-public class CospaDTO {
+public class CospaDTO implements Cloneable{//クローンエイブルのインターフェイスを実装
    private int id;
    private String url;
    private String name;
@@ -90,5 +90,16 @@ public class CospaDTO {
     public void setCalory(int calory) {
         this.calory = calory;
     }
+
+    //クローンメソッドのオーバーライド
+    @Override
+    public CospaDTO clone() {
+        try {
+            CospaDTO clone = (CospaDTO) super.clone();
+            // TODO: このクローンが元の内部を変更できないようにミュータブルな状態をここにコピーします
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
-//　ID  URL 名前  日時 値段 個数 用途 カロリー
