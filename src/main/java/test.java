@@ -1,5 +1,6 @@
 import entity.CospaDTO;
 import function.Controller;
+import function.CospaDAO;
 import function.Display;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,7 +10,8 @@ public class test {
         Scanner scanner = new Scanner(System.in);
         Controller controller = new Controller();
         Display display = new Display();
-        ArrayList<CospaDTO> list = new ArrayList<>();
+        CospaDAO cospaDAO = new CospaDAO();
+        ArrayList<CospaDTO> list = cospaDAO.load();
         for(; ; ) {
             display.listDisplay(list);
             System.out.println("何用:? (コスパ順：0 入力：1 編集：2 削除：３)");
@@ -21,6 +23,5 @@ public class test {
                 default:continue;
             }
         }
-
     }
 }

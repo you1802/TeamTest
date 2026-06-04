@@ -1,18 +1,16 @@
 package entity;
 
-import java.util.Calendar;
-
 public class CospaDTO implements Cloneable{//クローンエイブルのインターフェイスを実装
    private int id;
    private String url;
    private String name;
-   private Calendar date;
+   private String date;
    private int cost;
    private int number;
    private int purpose;
-   private  int calory;
+   private int calory;
 
-   public CospaDTO(int id, String url, String name, Calendar date, int cost, int number, int purpose, int calory) {
+   public CospaDTO(int id, String url, String name, String date, int cost, int number, int purpose, int calory) {
        this.id = id;
        this.url = url;
        this.name = name;
@@ -51,11 +49,11 @@ public class CospaDTO implements Cloneable{//クローンエイブルのイン�
         this.name = name;
     }
 
-    public Calendar getDate() {
+    public String getDate() {
        return date;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

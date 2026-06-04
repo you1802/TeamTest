@@ -3,7 +3,6 @@ package function;
 import entity.CospaDTO;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Scanner;
 
 public class Display {
@@ -12,7 +11,7 @@ public class Display {
         for (int i = 0; i < list.size(); i++) {
             System.out.println("ID:" + list.get(i).getId() +
                     " 商品名:" + list.get(i).getName() +
-                    " 日時:" + list.get(i).getDate().get(Calendar.HOUR_OF_DAY) +
+                    " 日時:" + list.get(i).getDate() +
                     " ★100y毎c:" + list.get(i).getCalory() * 100 / list.get(i).getCost() +
                     "★ カロリー:" + list.get(i).getCalory() +
                     " 価格:" + list.get(i).getCost() +

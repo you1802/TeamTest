@@ -2,20 +2,20 @@ package function;
 
 import entity.CospaDTO;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Scanner;
 
 public class Controller {
     //商品情報を入力
-    public ArrayList<CospaDTO> listInput(Scanner scanner, ArrayList<CospaDTO> list) {
+    public void listInput(Scanner scanner, ArrayList<CospaDTO> list) {
         CospaDTO cospaDTO = new CospaDTO();
         cospaDTO.setId(list.isEmpty() ? 0 : list.get(list.size() - 1).getId() + 1);
         System.out.println("URL:?");
         cospaDTO.setUrl(scanner.nextLine());
         System.out.println("商品名:?");
         cospaDTO.setName(scanner.nextLine());
-        cospaDTO.setDate(Calendar.getInstance());
+        cospaDTO.setDate(LocalDateTime.now().toString());
         System.out.println("価格:?");
         cospaDTO.setCost(scanner.nextInt());
         System.out.println("個数:?");
@@ -26,7 +26,6 @@ public class Controller {
         cospaDTO.setCalory(scanner.nextInt());
         list.add(cospaDTO);
         scanner.nextLine();
-        return list;
     }
 
     //商品情報を編集
