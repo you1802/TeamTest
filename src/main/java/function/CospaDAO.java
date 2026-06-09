@@ -4,6 +4,8 @@ import entity.CospaDTO;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -34,6 +36,31 @@ public class CospaDAO {
             return list;
         } catch (FileNotFoundException e) {
             return list;
+        }
+    }
+
+    //保存
+    public void save(ArrayList<CospaDTO> list){
+
+        String saveStr = "";
+
+        for (int i = 0; i < list.size(); i++) {
+            saveStr += list.get(i).getId() + " ";
+            saveStr += list.get(i).getUrl() + " ";
+            saveStr += list.get(i).getName() + " ";
+            saveStr += list.get(i).getDate() + " ";
+            saveStr += list.get(i).getCost() + " ";
+            saveStr += list.get(i).getNumber() + " ";
+            saveStr += list.get(i).getPurpose() + " ";
+            saveStr += list.get(i).getCalory() + " ";
+        }
+
+        try {
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(saveStr);
+            fileWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

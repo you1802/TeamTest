@@ -12,6 +12,7 @@ public class test {
         Display display = new Display();
         CospaDAO cospaDAO = new CospaDAO();
         ArrayList<CospaDTO> list = cospaDAO.load();
+
         for(; ; ) {
             display.listDisplay(list);
             System.out.println("何用:? (コスパ順：0 入力：1 編集：2 削除：３)");
@@ -22,6 +23,9 @@ public class test {
                 case "3": controller.delete(scanner, list); break;
                 default:continue;
             }
+
+        cospaDAO.save(list);
+
         }
     }
 }
